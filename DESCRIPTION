@@ -1,0 +1,16 @@
+Package: mathieuR
+Title: Mathieu Custom Theme
+Version: 0.0.0.9000
+Authors@R: person("Mathieu", "Bray", email = "braymath@umich.edu", role = c("aut", "cre"))
+Description: Custom ggplot2 themes commonly used by Mathieu.
+Depends: R (>= 3.3.2)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Import:
+  ggplot2,
+  lubridate
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
