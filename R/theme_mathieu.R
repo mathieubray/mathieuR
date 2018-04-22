@@ -37,7 +37,7 @@ theme_mathieu <- function(base_size=14,base_family="",
     if (is.na(watermark.size)){
       watermark.size <- 20
     }
-    watermark <- paste0("MATHIEU BRAY ",lubridate::year(lubridate::today()))
+    watermark <- paste0("@mathieubray ",lubridate::year(lubridate::today()))
   } else {
     watermark <- ""
   }
