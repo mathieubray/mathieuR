@@ -4,28 +4,31 @@
 \alias{theme_mathieu}
 \title{Mathieu's Custom Theme}
 \usage{
-theme_mathieu(base_size = 14, base_family = "", title.label, subtitle.label,
-  x.label, y.label, x.watermark = NA, y.watermark = NA,
-  watermark.size = NA)
+theme_mathieu(title.label, x.label = "", y.label = "",
+  subtitle.label = "", base_size = 14, watermark.coord = NULL,
+  watermark.size = 15, watermark.alpha = 0.15, watermark.angle = 30,
+  watermark.color = "red")
 }
 \arguments{
-\item{base_size}{Text size}
-
-\item{base_family}{Text font}
-
 \item{title.label}{Title}
-
-\item{subtitle.label}{Subtitle}
 
 \item{x.label}{X Label}
 
 \item{y.label}{Y Label}
 
-\item{x.watermark}{X coordinate for watermark}
+\item{subtitle.label}{Subtitle}
 
-\item{y.watermark}{Y coordinate for watermark}
+\item{base_size}{Font size}
+
+\item{watermark.coord}{Coordinates for watermark}
 
 \item{watermark.size}{Size of the watermark}
+
+\item{watermark.alpha}{Transparency of the watermark}
+
+\item{watermark.angle}{Angle of the watermark}
+
+\item{watermark.color}{Color of the watermark}
 }
 \value{
 The ggplot2 theme
@@ -34,16 +37,11 @@ The ggplot2 theme
 Custom ggplot2 themes for plots
 }
 \examples{
-x.annot <- mean(player.bios$Height)
-y.annot <- mean(player.bios$Weight)
-
-ggplot(player.bios,aes(x=Position,y=Weight)) +
- geom_boxplot() +
- theme_mathieu(title.label="NHL Height by Position",
-               subtitle.label="A comparison of the heights of skaters who played in the NHL",
-               x.label="Position",
-               y.label="Weight",
-               x.watermark=2.5,
-               y.watermark=y.annot,
-               watermark.size=10)
+ggplot(mtcars, aes(x=wt,y=qsec))
++ geom_point() +
+theme_mathieu(title.label="mathieuR Theme Example",
+subtitle.label="Compares wt and qsec of the mtcars dataset",
+x.label = "Weight",
+y.label = "QSEC",
+watermark.coord=c(mean(mtcars$wt), mean(mtcars$qsec)))
 }
