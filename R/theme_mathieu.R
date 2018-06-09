@@ -17,8 +17,8 @@
 #' @export
 #'
 #' @examples
-#' ggplot(mtcars, aes(x=wt,y=qsec))
-#' + geom_point() +
+#' ggplot(mtcars, aes(x=wt,y=qsec)) +
+#' geom_point() +
 #' theme_mathieu(title.label="mathieuR Theme Example",
 #' subtitle.label="Compares wt and qsec of the mtcars dataset",
 #' x.label = "Weight",
